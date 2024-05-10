@@ -20,19 +20,17 @@ import dev.devlopment.basic_assignment.Utils.VideoItem
 import dev.devlopment.basic_assignment.Utils.getFilteredVideos
 
 // Sample data class representing a video
-data class Video(val title: String, val description: String, val likes: Int, val comments: Int, val thumbnail: Int)
+
 
 // Sample list of videos
-val videoList = listOf(
-    Video("Video 1", "Description for Video 1", 100, 20, R.drawable.logo),
-    Video("Video 2", "Description for Video 2", 150, 30, R.drawable.logo),
-    Video("Video 3", "Description for Video 3", 200, 40, R.drawable.logo)
-)
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun YouTubeHome(navController: NavHostController) {
     var searchText by remember { mutableStateOf(TextFieldValue()) }
+
+    val filteredVideos = getFilteredVideos(searchText.text)
 
     Column(modifier = Modifier.fillMaxSize()) {
         TopAppBar(title = { Text(text = "Home") })
@@ -47,7 +45,7 @@ fun YouTubeHome(navController: NavHostController) {
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
         ) {
-            items(getFilteredVideos(searchText.text)) { video ->
+            items(filteredVideos) { video ->
                 VideoItem(video = video) {
                     navController.navigate("${Screen.VideoScreen.route}/${video.title}")
                 }
@@ -55,6 +53,7 @@ fun YouTubeHome(navController: NavHostController) {
         }
     }
 }
+
 
 
 

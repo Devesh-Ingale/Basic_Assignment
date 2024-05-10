@@ -1,8 +1,14 @@
 package dev.devlopment.basic_assignment.Screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -20,6 +26,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.devlopment.basic_assignment.PostGreSql.Video
+import dev.devlopment.basic_assignment.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,7 +52,7 @@ fun VideoDetail(video: Video, onBackPressed: () -> Unit) {
                 verticalArrangement = Arrangement.Center
             ) {
                 Image(
-                    painter = painterResource(id = video.thumbnail),
+                    painter = painterResource(id = R.drawable.logo),
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -64,8 +72,3 @@ fun VideoDetail(video: Video, onBackPressed: () -> Unit) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun VideoDetailPreview() {
-    VideoDetail(video = videoList.get(1),{})
-}

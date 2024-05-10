@@ -20,7 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import dev.devlopment.basic_assignment.Screens.Video
+import dev.devlopment.basic_assignment.PostGreSql.Video
+import dev.devlopment.basic_assignment.R
 
 @Composable
 fun VideoItem(video: Video, onItemClick: (Video) -> Unit) {
@@ -35,7 +36,7 @@ fun VideoItem(video: Video, onItemClick: (Video) -> Unit) {
             modifier = Modifier.padding(16.dp)
         ) {
             Image(
-                painter = painterResource(id = video.thumbnail),
+                painter = painterResource(id = R.drawable.logo),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
