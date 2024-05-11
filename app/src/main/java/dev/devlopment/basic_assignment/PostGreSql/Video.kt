@@ -7,9 +7,9 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Video(
     val id:Int,
-    val channelName: String? = null,
+    val channel_name: String,
     val title: String,
-    val thumbnailUrl: String? = null,
+    val thumbnail_url: String,
     val description: String,
     val likes: Int,
     val comments: Int
