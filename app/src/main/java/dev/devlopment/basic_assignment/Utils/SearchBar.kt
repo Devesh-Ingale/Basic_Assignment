@@ -42,7 +42,7 @@ fun SearchBar(
                 // tint = myColor5
             )
         },
-        singleLine = true,
+
         colors = TextFieldDefaults.textFieldColors(
             focusedTextColor = Color(0xFFF86B3F),
             unfocusedLabelColor = Color(0xFFF86B3F),
@@ -56,6 +56,7 @@ fun SearchBar(
                 .2f),
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent),
+        singleLine = true,
         shape = RoundedCornerShape(25.dp)
     )
 }
