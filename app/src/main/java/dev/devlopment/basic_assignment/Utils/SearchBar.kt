@@ -39,7 +39,6 @@ fun SearchBar(
         leadingIcon = {
             Icon(imageVector = Icons.Default.Search,
                 contentDescription ="create",
-                // tint = myColor5
             )
         },
 
